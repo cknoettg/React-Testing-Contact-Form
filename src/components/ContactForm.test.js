@@ -15,7 +15,7 @@ test('testing form...', () =>{
     const { getByLabelText, getByRole } = render(<ContactForm />);
   
     const firstName = getByLabelText(/first name/i);
-    fireEvent.change(firstName, { target: { value: 'Cor'} });
+    fireEvent.change(firstName, { target: { value: 'Corey'} });
   
     const lastName = getByLabelText(/last Name/i);
     fireEvent.change(lastName, { target: { value: 'Knoettgen'} });
