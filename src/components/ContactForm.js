@@ -16,6 +16,7 @@ const ContactForm = () => {
         <div>
           <label htmlFor="firstName">First Name*</label>
           <input
+            id="firstName"
             name="firstName"
             placeholder="Edd"
             ref={register({ required: true, maxLength: 3 })}
@@ -36,12 +37,12 @@ const ContactForm = () => {
             <p>Looks like there was an error: {errors.lastName.type}</p>
           )}
         </div>
-
+            {/* placeholder is in wrong section - fixed by moving from label section to input section */}
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email">
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input name="email" placeholder="bluebill1049@hotmail.com" ref={register({ required: true })} />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
           )}
