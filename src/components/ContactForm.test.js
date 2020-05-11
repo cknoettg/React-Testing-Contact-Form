@@ -14,19 +14,19 @@ import ContactForm from './ContactForm';
 test('testing form...', () =>{
     const { getByLabelText, getByRole } = render(<ContactForm />);
   
-    // const firstName = getByLabelText(/first name/i);
-    // fireEvent.change(firstName, { target: { value: 'Cor'} });
+    const firstName = getByLabelText(/first name/i);
+    fireEvent.change(firstName, { target: { value: 'Cor'} });
   
-    // const lastName = getByLabelText(/last Name/i);
-    // fireEvent.change(lastName, { target: { value: 'Knoettgen'} });
+    const lastName = getByLabelText(/last Name/i);
+    fireEvent.change(lastName, { target: { value: 'Knoettgen'} });
 
     const email = getByLabelText(/email/i);
-    fireEvent.change(email, { target: { value: 'no@mail.com'} });
+    fireEvent.change(email, { target: { value: 'no@email.com'} });
 
     const message = getByLabelText(/message/i);
     fireEvent.change(message, { target: { value: 'Test'} });
     
     const button = getByRole('button', /submit/i);
     fireEvent.click(button);
-    
+
   });
