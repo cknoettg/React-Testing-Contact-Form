@@ -35,8 +35,6 @@ const ContactForm = () => {
     });
   }
 
-  //makePost();
-
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>

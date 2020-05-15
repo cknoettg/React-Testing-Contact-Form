@@ -1,6 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import ContactForm from './ContactForm';
+import axios from 'axios';
 
 //game plan:
 // test First Name
@@ -30,3 +31,25 @@ test('testing form...', () =>{
     fireEvent.click(button);
 
   });
+
+  //STRETCH: Test axios POST request
+  // test("Testing the axios POST request...", async () => {
+    
+  //   //const { getByRole } = render(<ContactForm />);
+
+  //   //const button = getByRole('button', /submit/i);
+    
+  //   let url = 'https://reqres.in/api/users';
+
+  //   //we have to use a mock or spy function per error msg
+  //   let received = jest.fn(axios.post).mockResolvedValueOnce({
+  //     // data: {
+  //     //   first_name: "Donald"
+  //     // }
+  //   })
+
+  //   //STRECTH: Test axios POST request
+  //   expect(received).toHaveBeenCalledWith(url);
+  //   //expect(received).toHaveBeenCalledTimes(1);
+
+  // });

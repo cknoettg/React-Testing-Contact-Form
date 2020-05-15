@@ -9,7 +9,7 @@ import ContactForm from '../src/components/ContactForm';
 
 test("renders App without crashing", () => {
   const container = render(<App />);
-  console.log("app.test.js: render test: container: ", container);
+  //console.log("app.test.js: render test: container: ", container);
 });
 
 test("renders ContactForm", () =>{
