@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from 'axios';
 
 const ContactForm = () => {
   const [data, setData] = useState();
@@ -8,7 +9,33 @@ const ContactForm = () => {
   });
   const onSubmit = (data) => {
     setData(data);
+    //STRETCH: POST data
+    makePost(data);
   };
+
+  //STRETCH: POST Request from REQ|RES API and async
+  //https://reqres.in/api/users
+  async function makePost(params){
+
+    //initial test
+    // let params = {
+    //   first_name: 'Corey',
+    //   last_name: 'K',
+    //   email: 'no@email.com',
+    //   message: 'Testing 123'
+    // }
+
+    await axios.post('https://reqres.in/api/users', params)
+    .then(res => {
+      console.log(`statusCode: ${res.statusCode}`)
+      console.log(res)
+    })
+    .catch(error => {
+      console.error("Couldn't POST", error)
+    });
+  }
+
+  //makePost();
 
   return (
     <div className="App">
