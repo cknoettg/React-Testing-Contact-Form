@@ -12,7 +12,7 @@ import axios from 'axios';
 
 //unexpected behavior that we fixed -
 //  the first name field has max length of 3 chars
-test('testing form...', () =>{
+test('testing form...', async () =>{
     const { getByLabelText, getByRole } = render(<ContactForm />);
   
     const firstName = getByLabelText(/first name/i);
@@ -30,19 +30,19 @@ test('testing form...', () =>{
     const button = getByRole('button', /submit/i);
     fireEvent.click(button);
 
+    //STRECTH: async axios.post text call
+    //await waitFor(() => expect('https://reqres.in/api/users').toHaveBeenCalledTimes(1))
+
   });
 
   //STRETCH: Test axios POST request
   // test("Testing the axios POST request...", async () => {
     
-  //   //const { getByRole } = render(<ContactForm />);
-
-  //   //const button = getByRole('button', /submit/i);
-    
   //   let url = 'https://reqres.in/api/users';
 
   //   //we have to use a mock or spy function per error msg
   //   let received = jest.fn(axios.post).mockResolvedValueOnce({
+  //  //insert some data here
   //     // data: {
   //     //   first_name: "Donald"
   //     // }
